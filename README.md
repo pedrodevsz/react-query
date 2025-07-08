@@ -1,3 +1,5 @@
+## Como usar o react query no next
+
 ### 1. Gerencia o estado dos dados que vêm da API
 
  - React Query mantém o resultado das suas buscas (dados dos livros) no cache, gerenciando loading, erro e dados atuais automaticamente. Você não precisa criar vários estados (useState) para isso.
