@@ -1,36 +1,19 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+### 1. Gerencia o estado dos dados que vêm da API
 
-## Getting Started
+ - React Query mantém o resultado das suas buscas (dados dos livros) no cache, gerenciando loading, erro e dados atuais automaticamente. Você não precisa criar vários estados (useState) para isso.
 
-First, run the development server:
+### 2. Faz o cache automático dos dados
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+ - Se você buscar o mesmo título várias vezes, React Query pode retornar o dado do cache, evitando chamadas desnecessárias à API — isso melhora performance e evita sobrecarga no backend.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Controle de loading e erros
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+ - Ele já te fornece estados como isFetching, isLoading, error, facilitando mostrar feedback para o usuário sem muito esforço.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Refetch automático e manual
 
-## Learn More
+ - Você pode controlar quando buscar os dados (exemplo: só quando o usuário clicar “Buscar”), e pode configurar para refazer buscas automaticamente em vários cenários (quando a página ganha foco, ou a rede volta).
 
-To learn more about Next.js, take a look at the following resources:
+### 5. Sincronização e consistência de dados
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+ - React Query mantém seus dados sincronizados com a API, por exemplo, atualizando dados em background ou sincronizando dados entre abas do navegador.
